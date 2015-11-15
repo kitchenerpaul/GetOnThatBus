@@ -13,6 +13,10 @@
 		176277FB1BCD9D8200747057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176277F91BCD9D8200747057 /* Main.storyboard */; };
 		176277FD1BCD9D8200747057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176277FC1BCD9D8200747057 /* Assets.xcassets */; };
 		176278001BCD9D8200747057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176277FE1BCD9D8200747057 /* LaunchScreen.storyboard */; };
+		176278081BCD9DD900747057 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176278071BCD9DD900747057 /* MapKit.framework */; };
+		1762780B1BCDA75A00747057 /* BusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762780A1BCDA75A00747057 /* BusStop.m */; settings = {ASSET_TAGS = (); }; };
+		1762780E1BCDCD2200747057 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762780D1BCDCD2200747057 /* DetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1762788B1BD06C3300747057 /* BusStopsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762788A1BD06C3300747057 /* BusStopsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		176277FC1BCD9D8200747057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		176277FF1BCD9D8200747057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		176278011BCD9D8200747057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		176278071BCD9DD900747057 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		176278091BCDA75A00747057 /* BusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStop.h; sourceTree = "<group>"; };
+		1762780A1BCDA75A00747057 /* BusStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStop.m; sourceTree = "<group>"; };
+		1762780C1BCDCD2200747057 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1762780D1BCDCD2200747057 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		176278891BD06C3300747057 /* BusStopsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopsTableViewController.h; sourceTree = "<group>"; };
+		1762788A1BD06C3300747057 /* BusStopsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176278081BCD9DD900747057 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +54,7 @@
 		176277E41BCD9D8200747057 = {
 			isa = PBXGroup;
 			children = (
+				176278071BCD9DD900747057 /* MapKit.framework */,
 				176277EF1BCD9D8200747057 /* GetOnThatBus */,
 				176277EE1BCD9D8200747057 /* Products */,
 			);
@@ -58,14 +71,15 @@
 		176277EF1BCD9D8200747057 /* GetOnThatBus */ = {
 			isa = PBXGroup;
 			children = (
-				176277F31BCD9D8200747057 /* AppDelegate.h */,
-				176277F41BCD9D8200747057 /* AppDelegate.m */,
+				176277F91BCD9D8200747057 /* Main.storyboard */,
 				176277F61BCD9D8200747057 /* ViewController.h */,
 				176277F71BCD9D8200747057 /* ViewController.m */,
-				176277F91BCD9D8200747057 /* Main.storyboard */,
-				176277FC1BCD9D8200747057 /* Assets.xcassets */,
-				176277FE1BCD9D8200747057 /* LaunchScreen.storyboard */,
-				176278011BCD9D8200747057 /* Info.plist */,
+				1762780C1BCDCD2200747057 /* DetailViewController.h */,
+				1762780D1BCDCD2200747057 /* DetailViewController.m */,
+				176278891BD06C3300747057 /* BusStopsTableViewController.h */,
+				1762788A1BD06C3300747057 /* BusStopsTableViewController.m */,
+				176278091BCDA75A00747057 /* BusStop.h */,
+				1762780A1BCDA75A00747057 /* BusStop.m */,
 				176277F01BCD9D8200747057 /* Supporting Files */,
 			);
 			path = GetOnThatBus;
@@ -74,6 +88,11 @@
 		176277F01BCD9D8200747057 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				176277F31BCD9D8200747057 /* AppDelegate.h */,
+				176277F41BCD9D8200747057 /* AppDelegate.m */,
+				176277FC1BCD9D8200747057 /* Assets.xcassets */,
+				176277FE1BCD9D8200747057 /* LaunchScreen.storyboard */,
+				176278011BCD9D8200747057 /* Info.plist */,
 				176277F11BCD9D8200747057 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -150,8 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1762780E1BCDCD2200747057 /* DetailViewController.m in Sources */,
+				1762780B1BCDA75A00747057 /* BusStop.m in Sources */,
 				176277F81BCD9D8200747057 /* ViewController.m in Sources */,
 				176277F51BCD9D8200747057 /* AppDelegate.m in Sources */,
+				1762788B1BD06C3300747057 /* BusStopsTableViewController.m in Sources */,
 				176277F21BCD9D8200747057 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +321,7 @@
 				176278061BCD9D8200747057 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

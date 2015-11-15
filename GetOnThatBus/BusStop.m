@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  BusStop.m
 //  GetOnThatBus
 //
 //  Created by Paul Kitchener on 10/13/15.
 //  Copyright © 2015 Paul Kitchener. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BusStop.h"
 
-@interface ViewController : UIViewController
+@implementation BusStop
 
 @end
