@@ -14,9 +14,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="tuQ-IT-ocv">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <items>
+                                <navigationItem title="List" id="X32-9a-Kyb">
+                                    <barButtonItem key="leftBarButtonItem" title="&lt; Back 🚍" id="ovR-EG-3RD">
+                                        <connections>
+                                            <action selector="onBackButtonPushed:" destination="T9A-IF-4sZ" id="x5d-pC-UMb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusCellID" textLabel="wQ0-Bw-ZEf" detailTextLabel="BeP-n1-xhu" style="IBUITableViewCellStyleSubtitle" id="fKm-th-ocv">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fKm-th-ocv" id="l2l-If-2Hp">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -72,6 +86,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DmX-wU-f4a">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="RwR-1k-MVB"/>
                                 </connections>
@@ -139,7 +154,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus Stop Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm6-bH-9CU">
-                                <rect key="frame" x="160" y="85" width="280" height="46"/>
+                                <rect key="frame" x="160" y="60" width="280" height="46"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="G9w-0i-nMX"/>
@@ -150,7 +165,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route(s)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENa-JC-4zY">
-                                <rect key="frame" x="266" y="166" width="67" height="21"/>
+                                <rect key="frame" x="266" y="141" width="67" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="s2G-5k-Qb1"/>
@@ -161,7 +176,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route Numbers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxJ-36-aQe">
-                                <rect key="frame" x="169" y="195" width="261" height="29"/>
+                                <rect key="frame" x="169" y="170" width="261" height="29"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="hc2-xZ-Yw4"/>
@@ -172,7 +187,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTw-Ia-u1A">
-                                <rect key="frame" x="169" y="281" width="261" height="39"/>
+                                <rect key="frame" x="169" y="256" width="261" height="39"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="G8x-TL-RXM"/>
@@ -183,7 +198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bei-DD-P1s">
-                                <rect key="frame" x="262" y="260" width="75" height="21"/>
+                                <rect key="frame" x="262" y="235" width="75" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Hgh-kT-j3v"/>
@@ -200,15 +215,15 @@
                             <constraint firstItem="uXF-kI-DwO" firstAttribute="top" secondItem="cj8-9c-yRJ" secondAttribute="bottom" constant="8" id="2cD-tm-1R6"/>
                             <constraint firstItem="bei-DD-P1s" firstAttribute="centerX" secondItem="uxQ-Go-xMn" secondAttribute="centerX" id="6py-gt-Iey"/>
                             <constraint firstItem="Rm6-bH-9CU" firstAttribute="centerX" secondItem="uxQ-Go-xMn" secondAttribute="centerX" id="ABW-OG-zki"/>
-                            <constraint firstItem="Rm6-bH-9CU" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-192" id="VrJ-ac-Tul"/>
+                            <constraint firstItem="Rm6-bH-9CU" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-217" id="VrJ-ac-Tul"/>
                             <constraint firstItem="uXF-kI-DwO" firstAttribute="leading" secondItem="uxQ-Go-xMn" secondAttribute="leadingMargin" id="WEY-OH-XgG"/>
-                            <constraint firstItem="bei-DD-P1s" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-29.5" id="WIQ-XS-fu8"/>
+                            <constraint firstItem="bei-DD-P1s" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-54.5" id="WIQ-XS-fu8"/>
                             <constraint firstItem="DxJ-36-aQe" firstAttribute="centerX" secondItem="uxQ-Go-xMn" secondAttribute="centerX" id="Wzv-dn-LN9"/>
                             <constraint firstItem="ENa-JC-4zY" firstAttribute="centerX" secondItem="uxQ-Go-xMn" secondAttribute="centerX" id="dI4-5e-qH9"/>
-                            <constraint firstItem="RTw-Ia-u1A" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="0.5" id="eZu-r6-92E"/>
+                            <constraint firstItem="RTw-Ia-u1A" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-24.5" id="eZu-r6-92E"/>
                             <constraint firstItem="RTw-Ia-u1A" firstAttribute="centerX" secondItem="uxQ-Go-xMn" secondAttribute="centerX" id="fnj-8x-NhK"/>
-                            <constraint firstItem="ENa-JC-4zY" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-123.5" id="gel-9d-wmt"/>
-                            <constraint firstItem="DxJ-36-aQe" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-90.5" id="zrd-kL-Ofj"/>
+                            <constraint firstItem="ENa-JC-4zY" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-148.5" id="gel-9d-wmt"/>
+                            <constraint firstItem="DxJ-36-aQe" firstAttribute="centerY" secondItem="uxQ-Go-xMn" secondAttribute="centerY" constant="-115.5" id="zrd-kL-Ofj"/>
                         </constraints>
                     </view>
                     <connections>

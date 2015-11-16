@@ -21,6 +21,7 @@
 @property NSDictionary *busStopDictionary;
 @property NSMutableArray *busStops;
 @property NSMutableArray *stops;
+@property BusStop *busStop;
 
 @property CLLocationManager *locationManager;
 
@@ -49,20 +50,14 @@
         self.busStops = [self.busStopDictionary objectForKey:@"row"];
 
         for (NSDictionary *dictionary in self.busStops) {
-            BusStop *bus = [BusStop new];
-
-            bus.name = [dictionary objectForKey:@"cta_stop_name"];
-            bus.route = [dictionary objectForKey:@"routes"];
-            bus.transfer = dictionary[@"inter_modal"];
-            bus.latitude = [[dictionary objectForKey:@"latitude"] doubleValue];
-            bus.longitude = [[[dictionary objectForKey:@"location"] objectForKey:@"longitude"] doubleValue];
+            self.busStop = [[BusStop alloc] initWithDictionary:dictionary];
 
             if ([[dictionary[@"location"]objectForKey:@"longitude"]floatValue] > 0) {
-                bus.longitude = [dictionary[@"longitude"] floatValue];
+                self.busStop.longitude = [dictionary[@"longitude"] floatValue];
             } else {
-                bus.longitude = [[dictionary[@"location"]objectForKey:@"longitude"]floatValue];
+                self.busStop.longitude = [[dictionary[@"location"]objectForKey:@"longitude"]floatValue];
             }
-            [self.stops addObject:bus];
+            [self.stops addObject:self.busStop];
         }
 
         for (BusStop *bus in self.stops) {
@@ -80,11 +75,13 @@
 
     [task resume];
 
+
 }
 
 - (IBAction)segmentedControlSwitched:(UISegmentedControl *)sender {
 
     if (self.segmentedControl.selectedSegmentIndex == 1) {
+        self.segmentedControl.selectedSegmentIndex = 0;
         BusStopsTableViewController *busStopsTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ListID"];
         busStopsTVC.busStopDictionary = self.busStopDictionary;
         busStopsTVC.busStops = self.busStops;
@@ -108,15 +105,14 @@
         return nil;
     } else {
         MKAnnotationView *pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-        BusStop *busStop = [BusStop new];
+//        BusStop *busStop = [BusStop new];
 
-        for (busStop in self.stops) {
+        for (BusStop *busStop in self.stops) {
             if ([busStop.transfer isEqualToString:@"Pace"]) {
                 pin.image = [UIImage imageNamed:@"pace"];
             } else if ([busStop.transfer isEqualToString:@"Metra"]) {
                 pin.image = [UIImage imageNamed:@"metra"];
-            } else {
-            }
+            } 
         }
 
         pin.canShowCallout = YES;

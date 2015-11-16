@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BusStop.h"
 
 @interface BusStopsTableViewController : UITableViewController
 
 @property NSDictionary *busStopDictionary;
 @property NSMutableArray *busStops;
 @property NSMutableArray *stops;
+@property BusStop *busStop;
 
 @end

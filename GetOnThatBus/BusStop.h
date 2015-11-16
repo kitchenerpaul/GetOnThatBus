@@ -16,4 +16,6 @@
 @property double latitude;
 @property double longitude;
 
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end
